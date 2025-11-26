@@ -13,5 +13,5 @@ dst_path:
   help: "destination path?"
 
 _tasks:
-  - "cd {{ dst_path }} && {{ python_path }} -m venv .venv"
-  - "cd {{ dst_path }} && .venv\\Scripts\\pip.exe install -r requirements.txt"
+  - "cd {{ dst_path }}\\{{ project_name }} && {{ python_path }} -m venv .venv"
+  - "cd {{ dst_path }}\\{{ project_name }} && .venv\\Scripts\\pip.exe install -r requirements.txt"
