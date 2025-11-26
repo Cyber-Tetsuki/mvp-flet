@@ -9,5 +9,5 @@ python_path:
   help: "python path?"
 
 _tasks:
-  - "{{ python_path }} -m {{ _copier_dst_path }} venv .venv"
-  - "{{ _copier_dst_path }}\\.venv\\Scripts\\pip.exe install -r requirements.txt"
+  - "cd {{ _copier_dst_path }} && {{ python_path }} -m venv .venv"
+  - "cd {{ _copier_dst_path }} && .venv\\Scripts\\pip.exe install -r requirements.txt"
