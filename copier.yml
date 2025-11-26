@@ -8,6 +8,10 @@ python_path:
   type: str
   help: "python path?"
 
+dst_path:
+  type: str
+  help: "destination path?"
+
 _tasks:
-  - "cd {{ _copier_dst_path }} && {{ python_path }} -m venv .venv"
-  - "cd {{ _copier_dst_path }} && .venv\\Scripts\\pip.exe install -r requirements.txt"
+  - "cd {{ dst_path }} && {{ python_path }} -m venv .venv"
+  - "cd {{ dst_path }} && .venv\\Scripts\\pip.exe install -r requirements.txt"
