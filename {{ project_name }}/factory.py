@@ -12,7 +12,7 @@ class Factory:
         self._navigator = Navigator(page)
         self._env = EnvModel()
         self._db = Database(self._env.db_setting_path)
-        """append here. ps. ###dont remove this comment"""
+        # append here. ps. ###dont remove this comment
 
     def view_is_rendered(self) -> None:
         pass

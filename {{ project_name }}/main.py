@@ -29,6 +29,7 @@ def main(page: ft.Page):
 
     factory = Factory(page)
     routes = {
+        # append here. ps. ###dont remove this comment
         "/app": lambda: factory.create_app_view()
     }
 
