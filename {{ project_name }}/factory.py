@@ -12,13 +12,15 @@ class Factory:
         self._navigator = Navigator(page)
         self._env = EnvModel()
         self._db = Database(self._env.db_setting_path)
+        self._current_view = None
         # append here. ps. ###dont remove this comment
 
     def view_is_rendered(self) -> None:
-        pass
+        self._current_view.is_rendered()
 
     def create_app_view(self) -> ft.View:
         app_view = AppView(self._env)
         app_presenter = AppPresenter(app_view)
         app_view.presenter = app_presenter
+        self._current_view = app_view
         return app_view.build()
